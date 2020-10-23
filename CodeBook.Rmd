@@ -1,0 +1,61 @@
+---
+title: "CodeBook"
+author: "Me"
+date: "10/23/2020"
+output: html_document
+---
+
+        #Variables description
+##Subject:
+        An id number for each of the 30 subjects involved in the study
+        1-30
+##Activity:
+        The activity performed while gathering the measurments
+        1. Walking
+        2. Walking.upstairs
+        3. Walking.downstairs
+        4. Sitting
+        5. Standing
+        6. Laying
+##Features
+        The measurments obtained using the accelerometer and gyroscope 3-axial 
+        raw signals. Also, the used variables from these measuremnts 
+        were the **mean** and **standard deviation**
+        ###tBodyAcc-XYZ
+        ###tGravityAcc-XYZ
+        ###timeBodyAccJerk-XYZ
+        ###timeBodyGyro-XYZ
+        ###timeBodyGyroJerk-XYZ
+        ###timeBodyAccMag
+        ###timeGravityAccMag
+        ###timeBodyAccJerkMag
+        ###timeBodyGyroMag
+        ###timeBodyGyroJerkMag
+        ###freqBodyAcc-XYZ
+        ###freqBodyAccJerk-XYZ
+        ###freqBodyGyro-XYZ
+        ###freqBodyAccMag
+        ###freqBodyAccJerkMag
+        ###freqBodyGyroMag
+        #freqBodyGyroJerkMag
+        
+        #Analysis description
+The **first** step to get a tidy data set was the **merging** of the different data
+files that were provided. The subject and Y data frames were binded to the X 
+data frames for both the train and test data. Then the two binded data sets were
+merged resulting in a data frame of 10299 observations and 563 variables.
+
+The **second** step was **extracting** the columns or variables on the mean
+and standard deviation. Resulting in a data frame of 10299 observations and 
+68 variables.
+
+The **third** step was changing the activities ids (1-6) to their corresponding
+label (Walking, Walking.upstairs, Walking.downstairs, Sitting, Standing, Laying)
+
+The **forth** step was appropiatly **labeling** the variables using the given
+variable description. 
+
+The **fifth** step was creating a **final tidy data set** by first grouping
+the data first by subject and the by activity and finally summarizing each group 
+to obtain the mean. Resulting in a tidy data set with **180 observations and 68 variables**. 
+        
